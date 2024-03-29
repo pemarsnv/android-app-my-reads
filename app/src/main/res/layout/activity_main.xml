@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/antifwhite"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/newBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/new_book_string"
+        android:textColor="@color/blackbean"
+        app:layout_constraintBottom_toTopOf="@+id/newBookButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/newBookButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
+        android:backgroundTint="@color/viridian"
+        android:textColor="@color/antifwhite"
+        android:text="@string/new_book_buttonStr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newBookTextView" />
+
+    <TextView
+        android:id="@+id/currentReadsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="581dp"
+        android:text="@string/crt_books_string"
+        android:textColor="@color/blackbean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newBookButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/currentReadslistView"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/blackbean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentReadsTextView" />
+
+    <TextView
+        android:id="@+id/pastReadsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/past_books_string"
+        android:textColor="@color/blackbean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentReadslistView" />
+
+    <ListView
+        android:id="@+id/pastReadsListView"
+        android:layout_width="380dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/blackbean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pastReadsTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

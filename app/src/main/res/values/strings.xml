@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">my reads</string>
+    <string name="new_book_string">Vous avez commencé une nouvelle lecture ?</string>
+    <string name="new_book_buttonStr"> Ajouter un livre </string>
+    <string name="crt_books_string"> En ce moment, je lis…</string>
+    <string name="past_books_string"> Mes lectures finies </string>
+</resources>
