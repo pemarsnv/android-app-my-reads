@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<BookView> pastReadsViewArray;
     public BookViewAdapter currentBAdapter;
     public BookViewAdapter pastBAdapter;
+    private DAOBook dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BookDbHelper db = new BookDbHelper(this);
-        DAOBook dao     = new DAOBook(db);
+        this.dao        = new DAOBook(db);
 
         //display all of the current reads in the database
 
@@ -46,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         this.pastBAdapter = new BookViewAdapter(this,pastReadsViewArray);
-        ListView pastReadsView = (ListView) findViewById(R.id.pastReadsListView);
+        ListView pastReadsView = findViewById(R.id.pastReadsListView);
         pastReadsView.setAdapter(this.pastBAdapter);
 
-        Button newBtn = (Button) findViewById(R.id.newBookButton);
+        Button newBtn = findViewById(R.id.newBookButton);
 
         newBtn.setOnClickListener((v) -> {
             Intent intent = new Intent(MainActivity.this,NewBookActivity.class);
@@ -57,7 +58,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 }

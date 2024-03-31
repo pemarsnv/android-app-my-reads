@@ -5,21 +5,20 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 
 public enum Genre {
-    SF(1,"Science-fiction"),
-    THRILLER(1,"Thriller"),
-    POESIE(1,"Poésie"),
-    PHILO(1,"Philosophie"),
-    CLASSIQUE(1,"Classique"),
+    SF(R.drawable.sf,"Science-fiction"),
+    THRILLER(R.drawable.thriller,"Thriller"),
+    POESIE(R.drawable.poetry,"Poésie"),
+    PHILO(R.drawable.philosophy,"Philosophie"),
+    CLASSIQUE(R.drawable.classic,"Classique"),
     FANTAISIE(R.drawable.fantasy,"Fantaisie"),
-    ROMANCE(1,"Romance"),
-    NF(1, "Non-fiction"),
+    ROMANCE(R.drawable.romance,"Romance"),
+    BIOGRAPHY(R.drawable.biography, "Biographie"),
     POLITIQUE(R.drawable.politics,"Politique"),
-    POLAR(1,"Polar"),
+    POLAR(R.drawable.polar,"Polar"),
     MANGA(R.drawable.manga,"Manga"),
     MANHWA(R.drawable.manhwa,"Manhwa"),
-    BD(1,"BD"),
+    BD(R.drawable.bd,"BD"),
     DYSTOPIE(R.drawable.dystopia,"Dystopie");
-
 
     private final int  drawable;
     private final String    label;
@@ -47,6 +46,5 @@ public enum Genre {
     public String toString() {
         return label;
     }
-
 
 }
