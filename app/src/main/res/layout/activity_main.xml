@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/antifwhite"
+    android:background="@color/antiquewhite"
     tools:context=".MainActivity">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginEnd="177dp"
         android:layout_marginBottom="20dp"
         android:text="@string/new_book_string"
-        android:textColor="@color/blackbean"
+        android:textColor="@color/caputmortuum"
         app:layout_constraintBottom_toTopOf="@+id/newBookButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="160dp"
         android:backgroundTint="@color/viridian"
-        android:textColor="@color/antifwhite"
+        android:textColor="@color/antiquewhite"
         android:text="@string/new_book_buttonStr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="581dp"
         android:text="@string/crt_books_string"
-        android:textColor="@color/blackbean"
+        android:textColor="@color/caputmortuum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -59,7 +59,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
-        android:textColor="@color/blackbean"
+        android:textColor="@color/caputmortuum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentReadsTextView" />
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/past_books_string"
-        android:textColor="@color/blackbean"
+        android:textColor="@color/antiquewhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
-        android:textColor="@color/blackbean"
+        android:textColor="@color/caputmortuum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pastReadsTextView" />

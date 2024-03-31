@@ -1,5 +1,8 @@
 package com.example.myreads;
 
+import static android.provider.Settings.System.getString;
+import static com.example.myreads.R.string.book_author_suffix;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +42,9 @@ public class BookViewAdapter extends ArrayAdapter<BookView> {
 
         TextView authorView = currentItemView.findViewById(R.id.bookAuthorView);
         authorView.setText(currentBookPosition.getBookAuthor());
+
+        ImageView genreView = currentItemView.findViewById(R.id.bookGenreView);
+        genreView.setImageResource(currentBookPosition.getBookGenreIcon());
 
         return currentItemView;
 

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="viridian">#417B5A</color>
-    <color name="mint">#4FB790</color>
-    <color name="aquamarine">#74efb8</color>
-    <color name="blackbean">#2D0D03</color>
-    <color name="antifwhite">#EEEEEE</color>
+    <color name="viridian">#417B5A</color> //button colors
+    <color name="teagreen">#C2C6A7</color> //hint text color
+    <color name="caputmortuum">#462521</color> //text
+    <color name="antiquewhite">#FEFBF6</color> //background color and button text
 </resources>
