@@ -4,7 +4,7 @@
     <string name="new_book_string">Vous avez commencé une nouvelle lecture ?</string>
     <string name="new_book_buttonStr"> Ajouter un livre </string>
     <string name="crt_books_string"> En ce moment, je lis…</string>
-    <string name="past_books_string"> Mes lectures finies </string>
+    <string name="past_books_string"> Mes lectures finies : </string>
     <string name="book_author_suffix"> "Par: "</string>
     <string name="new_book_title"> Nouveau livre </string>
     <string name="new_book_name"> Titre : </string>
@@ -17,5 +17,9 @@
     <string name="cancel_buttonStr"> Retour </string>
     <string name="reading_radioStr"> Je suis en train de lire ce livre </string>
     <string name="read_radioStr"> J\'ai fini ce livre </string>
+    <string name="details_buttonStr"> Détails </string>
+    <string name="doneReading_buttonStr"> J\'ai fini ce livre </string>
+    <string name="startReading_buttonStr"> J\'ai recommencé ce livre </string>
+    <string name="delete_buttonStr"> Supprimer </string>
 
 </resources>

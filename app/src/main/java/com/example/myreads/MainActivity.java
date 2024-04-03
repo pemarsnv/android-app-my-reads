@@ -2,8 +2,12 @@ package com.example.myreads;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<BookView> pastReadsViewArray;
     public BookViewAdapter currentBAdapter;
     public BookViewAdapter pastBAdapter;
-    private DAOBook dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BookDbHelper db = new BookDbHelper(this);
-        this.dao        = new DAOBook(db);
+        DAOBook dao = new DAOBook(db);
 
         //display all of the current reads in the database
 
@@ -38,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
         this.currentBAdapter = new BookViewAdapter(this,currentReadsViewArray);
         ListView currentReadsView = (ListView) findViewById(R.id.currentReadslistView);
         currentReadsView.setAdapter(this.currentBAdapter);
+        currentReadsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                BookView book = (BookView) parent.getItemAtPosition(position);
+                openBookActions(book.getBookId());
+                //Toast.makeText(MainActivity.this,book.getBookId(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //display all of the past reads in the database
 
@@ -50,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
         ListView pastReadsView = findViewById(R.id.pastReadsListView);
         pastReadsView.setAdapter(this.pastBAdapter);
 
+        pastReadsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                BookView book = (BookView) parent.getItemAtPosition(position);
+                openBookActions(book.getBookId());
+                //Toast.makeText(MainActivity.this,bookId+"",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Button newBtn = findViewById(R.id.newBookButton);
 
         newBtn.setOnClickListener((v) -> {
@@ -57,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+    }
+
+    private void openBookActions(int bookId)  {
+        Intent intent = new Intent(MainActivity.this,BookActionsActivity.class);
+        intent.putExtra("bookId",bookId);
+        startActivity(intent);
     }
 
 }

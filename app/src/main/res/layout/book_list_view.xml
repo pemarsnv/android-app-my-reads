@@ -29,6 +29,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginStart="30dp"
         android:layout_alignStart="@id/bookTitleView"
+        android:gravity="top"
         android:textColor="@color/viridian"
         android:layout_below="@id/bookTitleView"
         android:textSize="18sp"

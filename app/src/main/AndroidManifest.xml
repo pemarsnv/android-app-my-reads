@@ -27,11 +27,11 @@
         <activity
             android:name=".NewBookActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".BookActionsActivity"
+            android:exported="true">
         </activity>
 
     </application>

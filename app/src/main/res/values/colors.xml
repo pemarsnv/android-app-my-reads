@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="viridian">#417B5A</color> //button colors
+    <color name="viridian">#417B5A</color> //button color
     <color name="teagreen">#C2C6A7</color> //hint text color
     <color name="caputmortuum">#462521</color> //text
     <color name="antiquewhite">#FEFBF6</color> //background color and button text
+    <color name="millstonegrey">#6B706A</color> //cancel button color
 </resources>

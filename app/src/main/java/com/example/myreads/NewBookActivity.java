@@ -52,8 +52,8 @@ public class NewBookActivity extends AppCompatActivity {
         createBtn.setOnClickListener((v) -> {
             if (!checkForEmptyField()) {
                 if (createBookFromFields()) {
-                    startActivity(new Intent(this, MainActivity.class));
                     finish();
+                    startActivity(new Intent(this, MainActivity.class));
                     Toast.makeText(NewBookActivity.this,"Livre ajouté",Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(NewBookActivity.this,"Une erreur s'est produite",Toast.LENGTH_SHORT).show();
