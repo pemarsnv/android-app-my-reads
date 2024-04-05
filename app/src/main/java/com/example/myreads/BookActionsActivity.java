@@ -33,6 +33,15 @@ public class BookActionsActivity extends AppCompatActivity {
         TextView textAuthor = (TextView) findViewById(R.id.textAuthorView);
         textAuthor.setText(this.book.getAuteur());
 
+        Button btnDetails = (Button) findViewById(R.id.btnDetails);
+
+        btnDetails.setOnClickListener((v) -> {
+            finish();
+            Intent intent = new Intent(this,BookDetailsActivity.class);
+            intent.putExtra("bookId", id);
+            startActivity(intent);
+        });
+
         Button btnRead = (Button) findViewById(R.id.btnReadState);
 
         if (this.book.isLu()) {
