@@ -16,7 +16,7 @@ public enum Genre {
     FANTAISIE(R.drawable.fantasy,R.string.fantaisie),
     ROMANCE(R.drawable.romance,R.string.romance),
     BIOGRAPHY(R.drawable.biography, R.string.biography),
-    POLITIQUE(R.drawable.politics,R.string.philo),
+    POLITIQUE(R.drawable.politics,R.string.politique),
     POLAR(R.drawable.polar,R.string.polar),
     MANGA(R.drawable.manga,R.string.manga),
     MANHWA(R.drawable.manhwa,R.string.manhwa),

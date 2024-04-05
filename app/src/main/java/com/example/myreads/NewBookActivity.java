@@ -46,8 +46,6 @@ public class NewBookActivity extends AppCompatActivity {
             public View getView(int position, View convertView, @NonNull ViewGroup parent) {
                 View view =super.getView(position, convertView, parent);
                 TextView textView= view.findViewById(android.R.id.text1);
-                textView.setText(getString(genreList.get(position).getLabelId()));
-                Log.i("nom",getString(genreList.get(position).getLabelId()));
                 textView.setTextSize(20);
                 return view;
             }
@@ -56,7 +54,7 @@ public class NewBookActivity extends AppCompatActivity {
 
         //setting up the title field
         AutoCompleteTextView title = findViewById(R.id.editTitleText);
-        String[] titles = {"1984","La ferme des animaux","Le gros caca"};
+        String[] titles = {"1984","La ferme des animaux"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles);
         title.setAdapter(adapter);
 
@@ -96,7 +94,6 @@ public class NewBookActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Log.i(TAG, item.getItemId()+"");
         switch (item.getItemId()) {
             case R.id.menuAdd:
                 Intent intent = new Intent(NewBookActivity.this,NewBookActivity.class);

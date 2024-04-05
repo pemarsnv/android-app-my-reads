@@ -1,7 +1,11 @@
 package com.example.myreads;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -12,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -54,6 +59,28 @@ public class BookDetailsActivity extends AppCompatActivity {
             intent.putExtra("bookId", bookid);
             startActivity(intent);
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.mymenu, menu);
+        return true;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuAdd:
+                Intent intent = new Intent(BookDetailsActivity.this,NewBookActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menuQuit:
+                System.exit(0);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
