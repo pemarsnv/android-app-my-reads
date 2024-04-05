@@ -14,12 +14,21 @@
     <string name="new_book_genre"> Genre : </string>
     <string name="new_book_notes"> Vos notes : </string>
     <string name="new_book_add_buttonStr"> Ajouter le livre </string>
-    <string name="cancel_buttonStr"> Retour </string>
+    <string name="cancel_buttonStr"> Annuler </string>
     <string name="reading_radioStr"> Je suis en train de lire ce livre </string>
     <string name="read_radioStr"> J\'ai fini ce livre </string>
     <string name="details_buttonStr"> Détails </string>
     <string name="doneReading_buttonStr"> J\'ai fini ce livre </string>
     <string name="startReading_buttonStr"> J\'ai recommencé ce livre </string>
     <string name="delete_buttonStr"> Supprimer </string>
+    <string name="title_deleteDialogStr"> Supprimer un livre </string>
+    <string name="msg_deleteDialogStr"> Êtes-vous sûr.e de vouloir supprimer ce livre ? </string>
+    <string name="confirm_buttonStr"> Confirmer </string>
+    <string name="bookAdded_str"> Livre ajouté </string>
+    <string name="error_str"> Une erreur s\'est produite </string>
+    <string name="missingTitleAuth_str"> Vous devez renseigner le titre et l\'auteur </string>
+    <string name="bookDeleted_str"> Livre supprimé </string>
+    <string name="quit_str"> Quitter </string>
+    <string name="fav_books"> Vos livres favoris </string>
 
 </resources>

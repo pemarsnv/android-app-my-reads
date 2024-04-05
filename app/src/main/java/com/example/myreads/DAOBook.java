@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 public class DAOBook {
@@ -17,6 +16,7 @@ public class DAOBook {
     }
 
     public boolean add(Book book) {
+
         this.db = this.dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("titre",book.getTitre());
@@ -24,6 +24,7 @@ public class DAOBook {
         values.put("genre",book.getGenre().toString());
         values.put("notes",book.getNotes());
         values.put("lu",book.isLu() ? 1 : 0);
+
         long id = this.db.insert("Books",null,values);
         if (id > -1) {
             book.setId((int) id);
@@ -79,6 +80,7 @@ public class DAOBook {
                 boolean lu      = curs.getInt(curs.getColumnIndexOrThrow("lu")) == 1;
 
                 return Optional.of(new Book(id,titre,auteur,Genre.findGenreByLabel(genre),notes,lu));
+
 
             } while (curs.moveToNext());
         }

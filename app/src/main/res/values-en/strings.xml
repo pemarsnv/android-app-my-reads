@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">my reads</string>
+    <string name="new_book_string"> Started a new book ? </string>
+    <string name="new_book_buttonStr"> Add a book </string>
+    <string name="crt_books_string"> Lately, I\'ve been reading… </string>
+    <string name="past_books_string"> Books I\'ve read : </string>
+    <string name="book_author_suffix"> "By: "</string>
+    <string name="new_book_title"> New book </string>
+    <string name="new_book_name"> Title : </string>
+    <string name="new_name_placeholder"> 1984 </string>
+    <string name="new_book_author"> Author : </string>
+    <string name="new_author_placeholder"> George Orwell </string>
+    <string name="new_book_genre"> Genre : </string>
+    <string name="new_book_notes"> Your notes : </string>
+    <string name="new_book_add_buttonStr"> Add the book </string>
+    <string name="cancel_buttonStr"> Cancel </string>
+    <string name="reading_radioStr"> I\'m currently reading this book </string>
+    <string name="read_radioStr"> I finished reading this book </string>
+    <string name="details_buttonStr"> Details </string>
+    <string name="doneReading_buttonStr"> I finished this book </string>
+    <string name="startReading_buttonStr"> I\'m re-reading this book </string>
+    <string name="delete_buttonStr"> Delete </string>
+    <string name="title_deleteDialogStr"> Delete a book </string>
+    <string name="msg_deleteDialogStr"> Are you sure you want to delete this book? </string>
+    <string name="confirm_buttonStr"> Confirm </string>
+    <string name="bookAdded_str"> Book added </string>
+    <string name="error_str"> An error occurred </string>
+    <string name="missingTitleAuth_str"> You have to fill in the author and title </string>
+    <string name="bookDeleted_str"> Book deleted </string>
+    <string name="quit_str"> Quit </string>
+    <string name="fav_books"> Your favorite books </string>
+
+</resources>

@@ -1,7 +1,5 @@
 package com.example.myreads;
 
-import android.graphics.drawable.Drawable;
-
 import androidx.annotation.NonNull;
 
 public enum Genre {
@@ -23,7 +21,7 @@ public enum Genre {
     private final int  drawable;
     private final String    label;
 
-    private Genre(int drawable, String label) {
+    Genre(int drawable, String label) {
         this.drawable = drawable;
         this.label =    label;
     }
