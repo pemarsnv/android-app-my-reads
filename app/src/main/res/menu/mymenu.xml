@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id = "@+id/menuAdd"
+        android:title="@string/new_book_add_buttonStr"
+        android:icon="@drawable/add"
+        android:visible="true"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id = "@+id/menuQuit"
+        android:title="Quit"
+        android:visible="true"
+        />
+</menu>

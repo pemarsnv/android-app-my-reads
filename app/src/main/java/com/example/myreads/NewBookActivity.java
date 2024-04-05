@@ -1,9 +1,16 @@
 package com.example.myreads;
 
+import static android.content.ContentValues.TAG;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -11,8 +18,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -31,17 +40,23 @@ public class NewBookActivity extends AppCompatActivity {
         Spinner genreSpin = findViewById(R.id.genreSpinner);
         List<Genre> genreList = new ArrayList<>();
         Collections.addAll(genreList,Genre.values());
-        ArrayAdapter<Genre> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genreList);
+        ArrayAdapter<Genre> spinnerAdapter = new ArrayAdapter<Genre>(this, android.R.layout.simple_spinner_item, genreList) {
+            @NonNull
+            @Override
+            public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+                View view =super.getView(position, convertView, parent);
+                TextView textView= view.findViewById(android.R.id.text1);
+                textView.setTextSize(20);
+                return view;
+            }
+        };
         genreSpin.setAdapter(spinnerAdapter);
 
         //setting up the title field
         AutoCompleteTextView title = findViewById(R.id.editTitleText);
         String[] titles = {"1984","La ferme des animaux","Le gros caca"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,titles);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles);
         title.setAdapter(adapter);
-
-        title.setOnItemClickListener((parent, view, position, id) ->
-                Toast.makeText(NewBookActivity.this,title.getText(),Toast.LENGTH_SHORT).show());
 
         //setting up the radio btn selected by default
         RadioGroup statusRadioGrp = findViewById(R.id.radioGroup);
@@ -53,24 +68,43 @@ public class NewBookActivity extends AppCompatActivity {
             if (!checkForEmptyField()) {
                 if (createBookFromFields()) {
                     finish();
-                    startActivity(new Intent(this, MainActivity.class));
-                    Toast.makeText(NewBookActivity.this,"Livre ajouté",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewBookActivity.this,R.string.bookAdded_str,Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(NewBookActivity.this,"Une erreur s'est produite",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewBookActivity.this,R.string.error_str,Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(NewBookActivity.this,"Vous devez renseigner le titre et l'auteur",Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewBookActivity.this,R.string.missingTitleAuth_str,Toast.LENGTH_SHORT).show();
             }
 
         });
 
         Button cancelBtn = findViewById(R.id.cancelBtn);
-        cancelBtn.setOnClickListener((v) -> {
-            finish();
-        });
+        cancelBtn.setOnClickListener((v) -> finish());
 
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Log.d(TAG, "onCreateOptionsMenu called");
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.mymenu, menu);
+        return true;
+    }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.i(TAG, item.getItemId()+"");
+        switch (item.getItemId()) {
+            case R.id.menuAdd:
+                Intent intent = new Intent(NewBookActivity.this,NewBookActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menuQuit:
+                System.exit(0);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     boolean checkForEmptyField() {
@@ -109,8 +143,15 @@ public class NewBookActivity extends AppCompatActivity {
 
         Book book = new Book(0,title,author,Genre.findGenreByLabel(genre),notes,read);
 
+        returnBookIntent(book);
         return dao.add(book);
 
+    }
+
+    void returnBookIntent(Book b) {
+        Intent resultIntent = getIntent();
+        resultIntent.putExtra("book",b);
+        setResult(RESULT_OK, resultIntent);
     }
 
 }

@@ -34,20 +34,19 @@
         android:id="@+id/btnDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
         android:layout_marginTop="41dp"
         android:gravity="center"
         android:text="@string/details_buttonStr"
         android:textColor="@color/antiquewhite"
         android:backgroundTint="@color/viridian"
-        app:layout_constraintStart_toStartOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAuthorView" />
 
     <Button
         android:id="@+id/btnReadState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text=""
@@ -74,13 +73,13 @@
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/cancel_buttonStr"
         android:textColor="@color/antiquewhite"
         android:backgroundTint="@color/millstonegrey"
-        app:layout_constraintStart_toStartOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

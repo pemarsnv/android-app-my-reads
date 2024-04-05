@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/antiquewhite">
+
+    <TextView
+        android:id="@+id/newBookNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/new_book_name"
+        android:textColor="@color/caputmortuum"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/editTitleText"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/new_name_placeholder"
+        android:inputType="text"
+        android:textColor="@color/caputmortuum"
+        android:textColorHint="@color/teagreen"
+        app:layout_constraintStart_toEndOf="@+id/newBookNameView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/newBookAuthorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/new_book_author"
+        android:textColor="@color/caputmortuum"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newBookNameView" />
+
+    <EditText
+        android:id="@+id/editAuthorText"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="@string/new_author_placeholder"
+        android:inputType="text"
+        android:textColor="@color/caputmortuum"
+        android:textColorHint="@color/teagreen"
+        app:layout_constraintStart_toEndOf="@+id/newBookNameView"
+        app:layout_constraintTop_toTopOf="@id/editTitleText" />
+
+    <TextView
+        android:id="@+id/newBookGenreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/new_book_genre"
+        android:textColor="@color/caputmortuum"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newBookAuthorView" />
+
+    <Spinner
+        android:id="@+id/genreSpinner"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="1dp"
+        android:textColor="@color/caputmortuum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@id/newBookGenreView"
+        app:layout_constraintTop_toTopOf="@id/editAuthorText" />
+
+    <TextView
+        android:id="@+id/newBookNotesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/new_book_notes"
+        android:textColor="@color/caputmortuum"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/editTitleText"
+        app:layout_constraintTop_toTopOf="@+id/editTitleText" />
+
+    <EditText
+        android:id="@+id/editNotesText"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="@color/caputmortuum"
+        app:layout_constraintTop_toTopOf="@+id/newBookNotesView"
+        app:layout_constraintStart_toEndOf="@+id/newBookNotesView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="@id/newBookNotesView"
+        app:layout_constraintTop_toBottomOf="@id/editNotesText">
+
+        <RadioButton
+            android:id="@+id/radioBtnCurrently"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reading_radioStr"
+            app:buttonTint="@color/viridian" />
+
+        <RadioButton
+            android:id="@+id/radioBtnPastly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_radioStr"
+            app:buttonTint="@color/viridian" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/approveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/viridian"
+        android:text="@string/new_book_add_buttonStr"
+        android:textColor="@color/antiquewhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genreSpinner" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/millstonegrey"
+        android:text="@string/cancel_buttonStr"
+        android:textColor="@color/antiquewhite"
+        app:layout_constraintBaseline_toBaselineOf="@+id/approveBtn"
+        app:layout_constraintStart_toEndOf="@+id/approveBtn"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

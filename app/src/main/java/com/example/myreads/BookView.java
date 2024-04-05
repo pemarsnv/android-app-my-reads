@@ -2,10 +2,10 @@ package com.example.myreads;
 
 public class BookView {
 
-    private int bookId;
-    private String bookTitle;
-    private int bookGenreIcon;
-    private String bookAuthor;
+    private final int bookId;
+    private final String bookTitle;
+    private final int bookGenreIcon;
+    private final String bookAuthor;
 
     public BookView(Book book) {
         this.bookId = book.getId();
@@ -14,7 +14,7 @@ public class BookView {
         this.bookAuthor = book.getAuteur();
     }
 
-    public int getBookId() { return this.bookId; };
+    public int getBookId() { return this.bookId; }
 
     public String getBookTitle() { return this.bookTitle; }
 
