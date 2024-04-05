@@ -45,4 +45,13 @@
     <string name="bd"> BD </string>
     <string name="dystopie"> Dystopie </string>
 
+    <string name="book_details_titre">[Titre]</string>
+    <string name="book_details_author">[Auteur]</string>
+    <string name="book_details_genre">[Genre]</string>
+    <string name="book_details_status">[Statut lecture]</string>
+    <string name="book_details_note">[Notes]</string>
+    <string name="book_details_note_label">Vos notes : </string>
+
+    <string name="book_details_reading_state_reading">Tu es en train de lire ce livre :O</string>
+    <string name="book_details_reading_state_already_read">Tu as déjà lu ce livre :)</string>
 </resources>
