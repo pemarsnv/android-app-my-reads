@@ -35,8 +35,6 @@ public class BookDetailsActivity extends AppCompatActivity {
             finish();
         }
 
-        //Book book = new Book(100, "La vie heureuse", "David Foenkinos", Genre.SF, "J'apprécie", true);
-
         TextView title = (TextView) findViewById(R.id.bookDetailsTitle);
         TextView author = (TextView) findViewById(R.id.bookDetailsAuthor);
         TextView genre = (TextView) findViewById(R.id.bookDetailsGenre);
@@ -46,7 +44,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         author.setText(book.getAuteur());
         genre.setText(book.getGenre().toString());
         note.setText(book.getNotes());
-        status.setText(book.isLu() ? "Vous avez lu ce livre :)" : "Vous êtes en pleine lecture :O");
+        status.setText(book.isLu() ? R.string.book_details_reading_state_already_read : R.string.book_details_reading_state_reading);
 
         Button btnCancel = (Button) findViewById(R.id.bookDetailsCancelBtn);
 
