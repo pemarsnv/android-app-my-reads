@@ -13,7 +13,6 @@ public class Book implements Parcelable {
     private final Genre     genre;
     private final String    notes;
     private boolean         lu;
-    private boolean         fav;
 
     public Book(int id, String titre, String auteur, Genre genre, String notes, boolean lu) {
         this.id     = id;           this.titre = titre;
@@ -28,7 +27,6 @@ public class Book implements Parcelable {
         notes = in.readString();
         genre = Genre.values()[in.readInt()];
         lu = in.readByte() != 0;
-        fav = in.readByte() != 0;
     }
 
     public void setId(int id) {
@@ -83,7 +81,6 @@ public class Book implements Parcelable {
         dest.writeString(notes);
         dest.writeInt(genre.ordinal());
         dest.writeByte((byte) (lu ? 1 : 0));
-        dest.writeByte((byte) (fav ? 1 : 0));
     }
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {

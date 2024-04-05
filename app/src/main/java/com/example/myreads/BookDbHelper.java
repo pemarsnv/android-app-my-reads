@@ -8,7 +8,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "books.db";
 
-    public final String SQL_CREATE = "CREATE TABLE Books (id INTEGER PRIMARY KEY AUTOINCREMENT, titre TEXT NOT NULL, auteur TEXT NOT NULL, genre TEXT NOT NULL, notes TEXT NOT NULL, lu INTEGER NOT NULL, fav INTEGER NOT NULL)";
+    public final String SQL_CREATE = "CREATE TABLE Books (id INTEGER PRIMARY KEY AUTOINCREMENT, titre TEXT NOT NULL, auteur TEXT NOT NULL, genre TEXT NOT NULL, notes TEXT NOT NULL, lu INTEGER NOT NULL)";
     public final String SQL_DELETE = "DROP TABLE IF EXISTS Books";
 
     public BookDbHelper(Context context) {

@@ -52,7 +52,7 @@ public class DAOBook {
                 String notes    = curs.getString(curs.getColumnIndexOrThrow("notes"));
                 boolean lu      = curs.getInt(curs.getColumnIndexOrThrow("lu")) == 1;
 
-                books.add(new Book(id,titre,auteur,Genre.findGenreByLabel(genre), notes,lu));
+                books.add(new Book(id,titre,auteur,Genre.valueOf(genre), notes,lu));
 
             } while (curs.moveToNext());
         }
@@ -79,7 +79,7 @@ public class DAOBook {
                 String notes    = curs.getString(curs.getColumnIndexOrThrow("notes"));
                 boolean lu      = curs.getInt(curs.getColumnIndexOrThrow("lu")) == 1;
 
-                return Optional.of(new Book(id,titre,auteur,Genre.findGenreByLabel(genre),notes,lu));
+                return Optional.of(new Book(id,titre,auteur,Genre.valueOf(genre),notes,lu));
 
 
             } while (curs.moveToNext());
@@ -109,7 +109,7 @@ public class DAOBook {
                 String notes = curs.getString(curs.getColumnIndexOrThrow("notes"));
                 boolean lu = curs.getInt(curs.getColumnIndexOrThrow("lu")) == 1;
 
-                books.add(new Book(id, titre, auteur, Genre.findGenreByLabel(genre), notes, lu));
+                books.add(new Book(id, titre, auteur, Genre.valueOf(genre), notes, lu));
 
             } while (curs.moveToNext());
         }
@@ -138,7 +138,7 @@ public class DAOBook {
                 String notes = curs.getString(curs.getColumnIndexOrThrow("notes"));
                 boolean lu = curs.getInt(curs.getColumnIndexOrThrow("lu")) == 1;
 
-                books.add(new Book(id, titre, auteur, Genre.findGenreByLabel(genre), notes, lu));
+                books.add(new Book(id, titre, auteur, Genre.valueOf(genre), notes, lu));
 
             } while (curs.moveToNext());
         }
@@ -149,7 +149,6 @@ public class DAOBook {
     }
 
     public boolean delete(int id) {
-
         this.db = this.dbHelper.getWritableDatabase();
         int rowcount = this.db.delete("Books","id=?", new String[]{id + ""});
         return rowcount > 0;

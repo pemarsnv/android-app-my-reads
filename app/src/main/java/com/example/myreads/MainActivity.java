@@ -3,6 +3,7 @@ package com.example.myreads;
 import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -109,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
             assert book != null;
             openBookActions(book.getId());
         }
+    }
+
+    public Context getContext() {
+        return this;
     }
 
 }

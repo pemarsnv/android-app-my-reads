@@ -46,6 +46,8 @@ public class NewBookActivity extends AppCompatActivity {
             public View getView(int position, View convertView, @NonNull ViewGroup parent) {
                 View view =super.getView(position, convertView, parent);
                 TextView textView= view.findViewById(android.R.id.text1);
+                textView.setText(getString(genreList.get(position).getLabelId()));
+                Log.i("nom",getString(genreList.get(position).getLabelId()));
                 textView.setTextSize(20);
                 return view;
             }

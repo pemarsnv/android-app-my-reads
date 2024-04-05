@@ -1,34 +1,38 @@
 package com.example.myreads;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
+import java.util.Locale;
+
 public enum Genre {
-    SF(R.drawable.sf,"Science-fiction"),
-    THRILLER(R.drawable.thriller,"Thriller"),
-    POESIE(R.drawable.poetry,"Poésie"),
-    PHILO(R.drawable.philosophy,"Philosophie"),
-    CLASSIQUE(R.drawable.classic,"Classique"),
-    FANTAISIE(R.drawable.fantasy,"Fantaisie"),
-    ROMANCE(R.drawable.romance,"Romance"),
-    BIOGRAPHY(R.drawable.biography, "Biographie"),
-    POLITIQUE(R.drawable.politics,"Politique"),
-    POLAR(R.drawable.polar,"Polar"),
-    MANGA(R.drawable.manga,"Manga"),
-    MANHWA(R.drawable.manhwa,"Manhwa"),
-    BD(R.drawable.bd,"BD"),
-    DYSTOPIE(R.drawable.dystopia,"Dystopie");
-
+    SF(R.drawable.sf, R.string.sf),
+    THRILLER(R.drawable.thriller,R.string.thriller),
+    POESIE(R.drawable.poetry,R.string.poesie),
+    PHILO(R.drawable.philosophy,R.string.philo),
+    CLASSIQUE(R.drawable.classic,R.string.classique),
+    FANTAISIE(R.drawable.fantasy,R.string.fantaisie),
+    ROMANCE(R.drawable.romance,R.string.romance),
+    BIOGRAPHY(R.drawable.biography, R.string.biography),
+    POLITIQUE(R.drawable.politics,R.string.philo),
+    POLAR(R.drawable.polar,R.string.polar),
+    MANGA(R.drawable.manga,R.string.manga),
+    MANHWA(R.drawable.manhwa,R.string.manhwa),
+    BD(R.drawable.bd,R.string.bd),
+    DYSTOPIE(R.drawable.dystopia,R.string.dystopie);
     private final int  drawable;
-    private final String    label;
+    private final int  labelId;
 
-    Genre(int drawable, String label) {
+    Genre(int drawable, int label) {
         this.drawable = drawable;
-        this.label =    label;
+        this.labelId  = label;
     }
 
     public static Genre findGenreByLabel(String label) {
         for (Genre g : Genre.values()) {
-            if (g.label.equals(label)) {
+            if (g.toString().equals(label)) {
                 return g;
             }
         }
@@ -39,10 +43,6 @@ public enum Genre {
         return drawable;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return label;
-    }
+    public int getLabelId() { return labelId; }
 
 }

@@ -30,5 +30,19 @@
     <string name="bookDeleted_str"> Book deleted </string>
     <string name="quit_str"> Quit </string>
     <string name="fav_books"> Your favorite books </string>
+    <string name="sf"> Science fiction </string>
+    <string name="thriller"> Thriller </string>
+    <string name="poesie"> Poetry </string>
+    <string name="philo"> Philosophy </string>
+    <string name="classique"> Classic </string>
+    <string name="fantaisie"> Fantasy </string>
+    <string name="romance"> Romance </string>
+    <string name="biography"> Biography </string>
+    <string name="politique"> Politics </string>
+    <string name="polar"> Polar </string>
+    <string name="manga"> Manga </string>
+    <string name="manhwa"> Manhwa </string>
+    <string name="bd"> BD </string>
+    <string name="dystopie"> Dystopia </string>
 
 </resources>
